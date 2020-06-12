@@ -1,0 +1,43 @@
+* ob-hack
+
+This org-mode babel extension enables you to execute hack language code block.
+
+** Install
+
+*** Requirement
+You need to install hhvm and hack-mode.
+
+*** Setup
+Load ob-hack.el and require.
+
+#+BEGIN_SRC emacs-lisp
+(load-file "/path/to/ob-hack.el")
+
+(org-babel-do-load-languages
+ 'org-babel-load-languages
+ '((hack . t)
+   ))
+#+END_SRC
+
+*** Configure
+
+#+BEGIN_SRC emacs-lisp
+(org-babel-do-load-languages
+ 'org-babel-load-languages
+ '((hack . t)
+   ))
+#+END_SRC
+
+** Examples
+
+*** Execute hack code
+
+#+BEGIN_SRC hack
+<<__EntryPoint>>
+function main(): void {
+  print("Hello, World!!");
+}
+#+END_SRC
+
+#+RESULTS:
+: Hello, World!!
